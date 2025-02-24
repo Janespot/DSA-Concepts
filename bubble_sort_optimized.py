@@ -13,8 +13,8 @@ def bubble_sort(lst):
         # set swapped to True if the list got swapped
         swapped = True
 
-        # if the list wasnt swapped, it means the lst is already sorted, we break the loop and return the sorted lst
-        if not swapped:
-          break
+    # if the list wasnt swapped, it means the lst is already sorted, we break the loop and return the sorted lst
+    if not swapped:
+      break
 
   return lst
