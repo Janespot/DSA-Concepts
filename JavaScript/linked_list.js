@@ -10,63 +10,62 @@ class LinkedList {
     this.head = null
     this.tail = null
   }
-}
 
-prepend(value) {
-  const newNode = new Node(value, this.head);
-  
-  this.head = newNode;
-  this.tail = this.tail ? this.tail : newNode;
+  prepend(value) {
+    const newNode = new Node(value, this.head);
+    
+    this.head = newNode;
+    this.tail = this.tail ? this.tail : newNode;
 
-  return this;
-}
+    return this;
+  }
 
-append(value) {
-  const newNode = new Node(value, null);
+  append(value) {
+    const newNode = new Node(value, null);
 
-  this.head = this.head ? this.head : newNode;
-  this.tail = newNode;
+    this.head = this.head ? this.head : newNode;
+    this.tail = newNode;
 
-  return this;
-}
+    return this;
+  }
 
-find(value) {
-  let currentNode = this.head;
-  
-  while(currentNode) {
-    if(urrentNode.data === value) {
-      return currentNode;
+  find(value) {
+    let currentNode = this.head;
+    
+    while(currentNode) {
+      if(urrentNode.data === value) {
+        return currentNode;
+      }
+      currentNode = currentNode.next;
     }
+    
+    return null;
+  }
+
+  deleteHead() {
+    if(!this.head) {
+      return;
+    }
+
+    if(this.head.next) {
+      this.head = this.head.next;
+    } else {
+      this.head = null;
+      this.tail = null;
+    }
+  }
+
+  toArray() {
+  const items = [];
+    let currentNode = this.head;
+
+  while(currentNode) {
+    items.push(currentNode.data);
     currentNode = currentNode.next;
   }
-  
-  return null;
-}
 
-deleteHead() {
-  if(!this.head) {
-    return;
+  return items;
   }
-
-  if(this.head.next) {
-    this.head = this.head.next;
-  } else {
-    this.head = null;
-    this.tail = null;
-  }
-}
-
-toArray() {
-const items = [];
-  let currentNode = this.head;
-
-while(currentNode) {
-  items.push(currentNode.data);
-  currentNode = currentNode.next;
-}
-
-return items;
-}
 }
 
 const list = new LinkedList();
